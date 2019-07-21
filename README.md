@@ -74,18 +74,18 @@ console.log(mylevel);
 ```ts
 import QQlevel from 'qqlevel';
 const config = {
-  maxLevelLimit: number = 255;
-  minLevelLimit: number = 0;
+  maxLevelLimit: number = xxx;
+  minLevelLimit: number = xxx;
   icon: {
     crown: string;
     sun: string;
     moon: string;
     star: string;
   } = {
-    crown: './assets/crown.svg',
-    sun: './assets/sun.svg',
-    moon: './assets/moon.svg',
-    star: './assets/star.svg',
+    crown: 'xxx',
+    sun: 'xxx',
+    moon: 'xxx',
+    star: 'xxx',
   };
   iconString: {
     crown: string;
@@ -109,15 +109,15 @@ const config = {
     moon: 4,
     star: 1,
   };
-  iconStyle: string = `width: 1em;height: 1em;`;
-  iconWrapStyle: string = `display: flex;align-items: center;font-szie: 12px;`;
+  iconStyle: string = `xxx`;
+  iconWrapStyle: string = `xxx`;
 }
 
-const level = new QQlevel(config);
+const level = new QQlevel(48, config);
 // or 或者
 const level = new QQlevel();
-level.getConfig(config);
-
+level.setConfig(config);
+level.setLevel(48);
 ```
 
 - Partial modification 部分修改
