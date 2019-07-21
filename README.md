@@ -6,7 +6,7 @@
   npm i qqlevel
 ```
 ```ts
-import QQlevel from '../src/app';
+import QQlevel from 'qqlevel';
 
 // 简单使用
 
@@ -72,7 +72,7 @@ console.log(mylevel);
 - Full revision 全量修改
 
 ```ts
-import QQlevel from '../src/app';
+import QQlevel from 'qqlevel';
 const config = {
   maxLevelLimit: number = 255;
   minLevelLimit: number = 0;
@@ -123,7 +123,7 @@ level.getConfig(config);
 - Partial modification 部分修改
 
 ```ts
-import QQlevel from '../src/app';
+import QQlevel from 'qqlevel';
 
 const level = new QQlevel();
 
