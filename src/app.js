@@ -51,7 +51,7 @@ var QQlevel = /** @class */ (function () {
         if (config) {
             this.setConfig(config);
         }
-        if (level) {
+        if (!isNaN(level)) {
             this.setLevel(level);
             this.calcLevel();
         }
@@ -202,8 +202,12 @@ var QQlevel = /** @class */ (function () {
             star: stCount
         };
     };
-    QQlevel.prototype.outputLevelHTML = function () {
-        if (this.level.level < 0) {
+    QQlevel.prototype.outputLevelHTML = function (level) {
+        if (!isNaN(level)) {
+            this.setLevel(level);
+            this.level = this.calcLevel();
+        }
+        else if (this.level.level < 0) {
             throw Error("Please set a number to level first by constructor or setLevel()");
         }
         var _a = this.level, crown = _a.crown, sun = _a.sun, moon = _a.moon, star = _a.star;
@@ -235,8 +239,12 @@ var QQlevel = /** @class */ (function () {
         }
         return "" + warpBegin + crowStr + sunStr + moonStr + starStr + warpEnd;
     };
-    QQlevel.prototype.outputLevelString = function () {
-        if (this.level.level < 0) {
+    QQlevel.prototype.outputLevelString = function (level) {
+        if (!isNaN(level)) {
+            this.setLevel(level);
+            this.level = this.calcLevel();
+        }
+        else if (this.level.level < 0) {
             throw Error("Please set a number to level first by constructor or setLevel()");
         }
         var _a = this.level, crown = _a.crown, sun = _a.sun, moon = _a.moon, star = _a.star;

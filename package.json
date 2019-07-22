@@ -1,11 +1,11 @@
 {
   "name": "qqlevel",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Imitate QQ Level",
   "main": "index.js",
   "scripts": {
     "comp": "tsc test/test.ts && tsc index.ts",
-    "test": "node test/test.js"
+    "test": "npm run comp && node test/test.js"
   },
   "repository": {
     "type": "git",

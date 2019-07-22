@@ -6,9 +6,15 @@ const endStartLevel: number = defaultConfig.minLevelLimit - 1;
 
 const testQQlevel: QQlevel = new QQlevel();
 for(let i = testStartLevel; i >= endStartLevel; i--){
-  testQQlevel.setLevel(i);
   console.log(`level: ${i}`);
-  console.log(testQQlevel.getLevel());
+  console.log(testQQlevel.outputLevelString(i));
+}
+
+const testQQlevel2: QQlevel = new QQlevel();
+for(let i = testStartLevel; i >= endStartLevel; i--){
+  testQQlevel2.setLevel(i);
+  console.log(`level: ${i}`);
+  console.log(testQQlevel2.getLevel());
   // console.log(testQQlevel.outputLevelString());
 }
 

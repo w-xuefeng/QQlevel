@@ -69,7 +69,7 @@ export class QQlevel {
     if (config) {
       this.setConfig(config);
     }
-    if (level) {
+    if (!isNaN(level)) {
       this.setLevel(level);
       this.calcLevel();
     }
@@ -244,8 +244,11 @@ export class QQlevel {
     };
   }
 
-  public outputLevelHTML(): string {
-    if (this.level.level < 0) {
+  public outputLevelHTML(level?: number): string {
+    if (!isNaN(level)) {
+      this.setLevel(level);
+      this.level = this.calcLevel();
+    } else if (this.level.level < 0) {
       throw Error("Please set a number to level first by constructor or setLevel()");
     }
     let { crown, sun, moon, star } = this.level;
@@ -278,8 +281,11 @@ export class QQlevel {
     return `${warpBegin}${crowStr}${sunStr}${moonStr}${starStr}${warpEnd}`;
   }
   
-  public outputLevelString(): string {
-    if (this.level.level < 0) {
+  public outputLevelString(level?: number): string {
+    if (!isNaN(level)) {      
+      this.setLevel(level);
+      this.level = this.calcLevel();
+    } else if (this.level.level < 0) {
       throw Error("Please set a number to level first by constructor or setLevel()");
     }
     let { crown, sun, moon, star } = this.level;

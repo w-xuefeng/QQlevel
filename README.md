@@ -1,10 +1,20 @@
-# 仿QQ等级计算方法 [👑，🌞， 🌙， ⭐]
+# 仿QQ等级计算方法 
+
+```js
+{
+  👑: 64,
+  🌞: 16,
+  🌙: 4,
+  ⭐: 1
+}
+```
 
 ## How to use?
 
 ```shell
-  npm i qqlevel
+npm i qqlevel
 ```
+
 ```ts
 import QQlevel from 'qqlevel';
 
@@ -230,6 +240,8 @@ level.setIconLevel(iconLevel):
 // 输出HTML
 const level = new QQlevel(16);
 const levelHTML = level.outputLevelHTML();
+// 或者
+const levelHTML = level.outputLevelHTML(16);
 console.log(levelHTML);
 /*
 <div style="display: flex;align-items: center;font-szie: 12px;">
@@ -237,9 +249,13 @@ console.log(levelHTML);
 </div>
 */
 
+
+
 // 输出字符
 const level = new QQlevel(254);
 const levelString = level.outputLevelString();
+// 或者
+const levelHTML = level.outputLevelString(254);
 console.log(levelString);
 // 👑👑👑🌞🌞🌞🌙🌙🌙⭐⭐
 ```
