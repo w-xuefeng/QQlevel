@@ -51,7 +51,7 @@ var QQlevel = /** @class */ (function () {
         if (config) {
             this.setConfig(config);
         }
-        if (!isNaN(level)) {
+        if (typeof level !== 'undefined' && !isNaN(level)) {
             this.setLevel(level);
             this.calcLevel();
         }
@@ -203,7 +203,7 @@ var QQlevel = /** @class */ (function () {
         };
     };
     QQlevel.prototype.outputLevelHTML = function (level) {
-        if (!isNaN(level)) {
+        if (typeof level !== 'undefined' && !isNaN(level)) {
             this.setLevel(level);
             this.level = this.calcLevel();
         }
@@ -240,7 +240,7 @@ var QQlevel = /** @class */ (function () {
         return "" + warpBegin + crowStr + sunStr + moonStr + starStr + warpEnd;
     };
     QQlevel.prototype.outputLevelString = function (level) {
-        if (!isNaN(level)) {
+        if (typeof level !== 'undefined' && !isNaN(level)) {
             this.setLevel(level);
             this.level = this.calcLevel();
         }

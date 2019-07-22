@@ -99,7 +99,7 @@
             if (config) {
                 this.setConfig(config);
             }
-            if (!isNaN(level)) {
+            if (typeof level !== 'undefined' && !isNaN(level)) {
                 this.setLevel(level);
                 this.calcLevel();
             }
@@ -251,7 +251,7 @@
             };
         };
         QQlevel.prototype.outputLevelHTML = function (level) {
-            if (!isNaN(level)) {
+            if (typeof level !== 'undefined' && !isNaN(level)) {
                 this.setLevel(level);
                 this.level = this.calcLevel();
             }
@@ -288,7 +288,7 @@
             return "" + warpBegin + crowStr + sunStr + moonStr + starStr + warpEnd;
         };
         QQlevel.prototype.outputLevelString = function (level) {
-            if (!isNaN(level)) {
+            if (typeof level !== 'undefined' && !isNaN(level)) {
                 this.setLevel(level);
                 this.level = this.calcLevel();
             }
@@ -323,7 +323,7 @@
             return "" + crowStr + sunStr + moonStr + starStr;
         };
         return QQlevel;
-    }());
+    }());   
     window.onload = function(){
       const defaultConfig = new QQlevelConfig();
       const testStartLevel = defaultConfig.maxLevelLimit + 1;

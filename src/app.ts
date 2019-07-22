@@ -69,7 +69,7 @@ export class QQlevel {
     if (config) {
       this.setConfig(config);
     }
-    if (!isNaN(level)) {
+    if (typeof level !== 'undefined' && !isNaN(level)) {
       this.setLevel(level);
       this.calcLevel();
     }
@@ -245,7 +245,7 @@ export class QQlevel {
   }
 
   public outputLevelHTML(level?: number): string {
-    if (!isNaN(level)) {
+    if (typeof level !== 'undefined' && !isNaN(level)) {
       this.setLevel(level);
       this.level = this.calcLevel();
     } else if (this.level.level < 0) {
@@ -282,7 +282,7 @@ export class QQlevel {
   }
   
   public outputLevelString(level?: number): string {
-    if (!isNaN(level)) {      
+    if (typeof level !== 'undefined' && !isNaN(level)) {
       this.setLevel(level);
       this.level = this.calcLevel();
     } else if (this.level.level < 0) {

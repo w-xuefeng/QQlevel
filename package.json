@@ -1,6 +1,6 @@
 {
   "name": "qqlevel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Imitate QQ Level",
   "main": "index.js",
   "scripts": {
