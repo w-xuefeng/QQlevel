@@ -58,11 +58,11 @@ export class QQlevel {
 
   private config: QQlevelConfig = new QQlevelConfig();
   private level: Level = {
-    level: null,
-    crown: null,
-    sun: null,
-    moon: null,
-    star: null,
+    level: Number(-1),
+    crown: Number(-1),
+    sun: Number(-1),
+    moon: Number(-1),
+    star: Number(-1),
   };
 
   public constructor(level?: number, config?: QQlevelConfig) {
@@ -170,7 +170,7 @@ export class QQlevel {
   }
 
   public calcLevel(): Level{
-    if (this.level.level != 0 && !this.level.level) {
+    if (this.level.level < 0) {
       throw Error("Please set a number to level first by constructor or setLevel()");
     }
     this.level = this.coreCalc(this.level.level);
@@ -245,11 +245,11 @@ export class QQlevel {
   }
 
   public outputLevelHTML(): string {
-    if (this.level.level != 0 && !this.level.level) {
+    if (this.level.level < 0) {
       throw Error("Please set a number to level first by constructor or setLevel()");
     }
     let { crown, sun, moon, star } = this.level;
-    if (!crown || !sun || !moon || !star) {
+    if (crown === -1 || sun === -1  || moon === -1  || star === -1 ) {
       const reTry = this.getLevel();
       crown = reTry.crown;
       sun = reTry.sun;
@@ -277,13 +277,13 @@ export class QQlevel {
     }
     return `${warpBegin}${crowStr}${sunStr}${moonStr}${starStr}${warpEnd}`;
   }
-
+  
   public outputLevelString(): string {
-    if (this.level.level != 0 && !this.level.level) {
+    if (this.level.level < 0) {
       throw Error("Please set a number to level first by constructor or setLevel()");
     }
     let { crown, sun, moon, star } = this.level;
-    if (!crown || !sun || !moon || !star) {
+    if (crown === -1  || sun === -1  || moon === -1  || star === -1 ) {
       const reTry = this.getLevel();
       crown = reTry.crown;
       sun = reTry.sun;
