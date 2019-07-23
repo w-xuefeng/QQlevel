@@ -189,7 +189,7 @@ level.setIconWrapStyle(iconWrapStyle);
 const iconWrapStyleMore: string = `
   align-items: center;
 `;
-level.setIconWrapStyle(iconWrapStyleMore);
+level.addIconWrapStyle(iconWrapStyleMore);
 
 // 配置最大等级和最小等级限制
 const range: {
